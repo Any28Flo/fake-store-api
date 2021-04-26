@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(express.json())
 
 const PORT = process.env.PORT;
 // require database configuration
@@ -14,6 +13,7 @@ app.use(cors({
     credentials: true,
     origin: ['http://localhost:3000']
 }));
+app.use(express.json());
 
 const api = require('./routes/api');
 
