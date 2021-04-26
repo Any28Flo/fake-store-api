@@ -17,6 +17,11 @@ app.use(express.json());
 
 const api = require('./routes/api');
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+
 app.use('/api', api );
 
 app.listen(PORT, () => {
