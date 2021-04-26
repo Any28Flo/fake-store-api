@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const userController = require('./../controllers/userController')
 
 router.get('/login', async (req, res) => {
     try {
@@ -8,10 +9,6 @@ router.get('/login', async (req, res) => {
     }
 })
 
-router.get('/register', async (req, res) => {
-    try {
-        res.send('register')    } catch (e) {
+router.post('/register', userController.registerUser)
 
-    }
-})
 module.exports = router;

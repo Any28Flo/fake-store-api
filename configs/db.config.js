@@ -1,11 +1,12 @@
-
 require('dotenv').config();
+const mongoose     = require('mongoose');
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:admin12345@cluster0.2mq70.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
-    client.close();
-});
+mongoose.Promise = Promise;
+mongoose
+    .connect(`${process.env.DATABASE}`, {useNewUrlParser: true,  useUnifiedTopology: true})
+    .then(x => {
+        console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    })
+    .catch(err => {
+        console.error('Error connecting to mongo', err)
+    });
