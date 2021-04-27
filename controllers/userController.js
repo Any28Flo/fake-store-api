@@ -19,7 +19,8 @@ exports.registerUser = async (req, res) => {
         }
         const newUser = new User({
             email: email,
-            password: hashPass
+            password: hashPass,
+            favs : []
         })
         const dbUser = await newUser.save();
 
