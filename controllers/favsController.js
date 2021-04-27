@@ -34,9 +34,7 @@ exports.getFavs = async (req, res) => {
         if (!jwt || !decodedToken.id) {
             return res.status(400).json({error: 'token missing or invalid'})
         }
-        console.log(decodedToken)
         const user = await User.findById(decodedToken.id)
-        console.log(user)
 
         const listFavs = await User.findById(user._id)
         if (listFavs) {
