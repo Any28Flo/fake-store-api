@@ -11,7 +11,7 @@ require('./configs/db.config');
 
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:3000']
+    origin: ['http://localhost:3000', 'https://fake-store-two.vercel.app']
 }));
 
 app.use(express.json());
