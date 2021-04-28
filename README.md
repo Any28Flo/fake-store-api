@@ -33,7 +33,7 @@ You need to have installed > NodeJS 12.x and NPM.
 * [login user](docs/v1/user/login.md) : `POST /api/login`
 
 ### FAVORITE PRODUCTS
-Detailed info about Dark characters
+Detailed info about favorite products
 * [Add favorite](docs/v1/favs/add-fav.md): `POST /api/add-fav`
 * [List favorites](docs/v1/favs/get-favs.md) : `GET /api/get-favs`
 
